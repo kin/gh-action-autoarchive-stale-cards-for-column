@@ -1,0 +1,30 @@
+name: 'Auto Archive For Column'
+description: 'Getting rid of old issues'
+inputs:
+  access-token:
+    description: 'Token with permissions to make changes in the repo'
+    required: true
+  column-to-archive:
+    description: 'Which column to archive old issues in'
+    required: true
+    default: 'Done'
+  days-old:
+    description: 'How many days old should we delete'
+    required: true
+    default: 30
+  repository:
+    description: 'The repository this runs on'
+    required: true
+  repository-owner:
+    description: 'The repository owner'
+    required: true
+  project-name:
+    description: 'The project name'
+    required: true
+
+outputs:
+  archived-count:
+    description: 'The number of issues archived'
+runs:
+  using: 'node12'
+  main: 'index.js'
