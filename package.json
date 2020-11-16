@@ -1,0 +1,14 @@
+{
+  "name": "gh-action-autoarchive-issues-for-column",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/kin/gh-action-autoarchive-issues-for-column",
+  "author": "Kevin Greene <kevin.greene@kin.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.2.6",
+    "@actions/github": "^4.0.0",
+    "@octokit/graphql": "^4.5.7",
+    "date-fns": "^2.16.1"
+  }
+}
