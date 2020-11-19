@@ -108,7 +108,8 @@ const run = async () => {
           .map(node => node.id)
 
     // Archive those - https://docs.github.com/en/free-pro-team@latest/rest/reference/projects#update-an-existing-project-card
-    let archivedCards = 0
+
+    console.log(`Archiving ${cardIdsToArchive.length} cards`)
 
     cardIdsToArchive.forEach(async (id) => {
       try {
@@ -118,7 +119,6 @@ const run = async () => {
                   authorization: `bearer ${accessToken}`,
                 },
         })
-        archivedCards += 1
       }
       catch(e) {
         console.log('archiveCard error: ', e)
@@ -126,7 +126,6 @@ const run = async () => {
       }
     })
 
-    console.log(`Archived ${archivedCards} cards`)
   } catch (error) {
     core.setFailed(error.message);
   }

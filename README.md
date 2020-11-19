@@ -1,10 +1,6 @@
 # gh-action-autoarchive-stale-cards-for-column
 This action allows the archiving of stale project cards in a given Github Project column. Helpful especially for cleaning up columns like "Done"
 
-## Use
-- Create a .yml workflow in `.github/workflows` directory of the repo that will run the action.
-- Follow the below template to use the action and make sure to fill out all required environment variables.
-
 ## Workflow Template
 ```
 name: Archive Stale Done Cards
@@ -43,6 +39,13 @@ jobs:
           # Required: Integer for how many days must have elapsed since the last time this card was touched
           days-old: 5
 ```
+## Required Inputs
+- `access-token`: Access token for repository. Use `"{{ secrets.GITHUB_TOKEN }}"` to prevent leaking secrets. This may require setting up a token with increased privileges. The token must have `repo` privileges.
+- `repository`: String with target repo name (e.g. 'kin/gh-action-autoarchive-issues-for-column' should be 'gh-action-autoarchive-issues-for-column' here)
+- `repository-owner`: String with repo owner name only (e.g. 'kin/gh-action-autoarchive-issues-for-column' should be 'kin' here)
+- `project-name`: String with name of project the target column is in (case insensitive)
+- `column-to-archive`: String with target column name (case insensitive)
+- `days-old`: Integer for how many days must have elapsed since the last time each card was touched before archiving
 
 ## Contribution
 To cotnribute, please open an Issue on the action repo: https://github.com/kin/gh-action-autoarchive-issues-for-column to discuss bugs/modifications.
