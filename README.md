@@ -1,4 +1,4 @@
-# gh-action-autoarchive-stale-cards-for-column
+# Autoarchive Stale Cards in Column
 This action allows the archiving of stale project cards in a given Github Project column. Helpful especially for cleaning up columns like "Done"
 
 ## Workflow Template
