@@ -35,7 +35,7 @@ const fetchCardsQuery = `query projectCards($owner: String!, $repo: String!, $pr
                            }
                          }`
 
-const archiveCardQuery = `mutation archiveCards($cardId: String!, $isArchived: Boolean = true) {
+const archiveCardQuery = `mutation archiveCards($cardId: ID!, $isArchived: Boolean = true) {
                              updateProjectCard(input:{projectCardId: $cardId, isArchived: $isArchived}) {
                                projectCard {
                                  id
